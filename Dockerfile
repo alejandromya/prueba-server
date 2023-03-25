@@ -15,8 +15,9 @@ RUN npm ci
 # Bundle app source
 COPY . .
 
-# ENV PORT=8000
+ENV PORT=8000
 EXPOSE 8000
+ENV NODE_ENV production
 
 # Creates a "dist" folder with the production build
 RUN npm run build
