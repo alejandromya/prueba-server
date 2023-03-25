@@ -17,4 +17,9 @@ COPY . .
 
 # ENV PORT=8000
 EXPOSE 8000
-CMD [ "npm", "run","start:dev" ]
+
+# Creates a "dist" folder with the production build
+RUN npm run build
+
+# Start the server using the production build
+CMD [ "node", "dist/main.js" ]
