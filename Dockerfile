@@ -8,12 +8,13 @@ WORKDIR /usr/src/app
 COPY package.json ./
 COPY package-lock.json ./
 
-RUN npm install
+RUN npm ci
 # If you are building your code for production
 # RUN npm ci --only=production
 
 # Bundle app source
 COPY . .
 
-EXPOSE 3000
+# ENV PORT=8000
+EXPOSE 8000
 CMD [ "npm", "run","start:dev" ]
